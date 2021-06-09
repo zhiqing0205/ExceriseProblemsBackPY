@@ -21,12 +21,12 @@ urlpatterns = [
     path("gproblem/detail/<int:id>", views.GProblemDetail.as_view(), name="test-detail"),
 
     # DRF viewsets
-    # path("viewsets/", views.ProblemViewSet.as_view(
-    #     {"get": "list", "post": "create"}
-    # ), name="viewsets-list"),
-    # path("viewsets/<int:pk>", views.ProblemViewSet.as_view(
-    #     {"get": "retrieve", "put": "update", "patch": "partial_update", "delete": "destroy"}
-    # ), name="viewsets-detail"),
+    path("viewsets/", views.ProblemViewSet.as_view(
+        {"get": "list", "post": "create"}
+    ), name="viewsets-list"),
+    path("viewsets/<int:pk>", views.ProblemViewSet.as_view(
+        {"get": "retrieve", "put": "update", "patch": "partial_update", "delete": "destroy"}
+    ), name="viewsets-detail"),
 
     path("" , include(router.urls))
 ]
